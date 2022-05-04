@@ -1,0 +1,42 @@
+
+.Weather{
+    width: 120px;
+    height: 177px;
+    background: #1E213A;
+}
+.Weather-day{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    text-align: center;
+    color: #E7E7EB;
+    margin-top: 16px;
+
+}
+.Weather-icon{
+    width: 56.44px;
+    height: 62px;
+}
+.weather-icon-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.Weather-value-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.Weather-value{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #E7E7EB;
+
+}
