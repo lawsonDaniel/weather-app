@@ -1,5 +1,6 @@
 import React from 'react'
 import Highlight from './Highlight'
+import Humidity from './Humidity'
 import WIndSpees from './WIndSpees'
 
 function Highlights() {
@@ -7,7 +8,7 @@ function Highlights() {
       <>
          <div style={{"display":"flex","gap":"50px","justifyContent":"center"}}>
         <Highlight wind={<WIndSpees/>} status="Wind Status" statusnumber="7" statusspped="mps"/>
-        <Highlight wind={<WIndSpees/>} status="Humidity" statusnumber="84" statusspped="%"/>
+        <Highlight wind={<Humidity/>} status="Humidity" statusnumber="84" statusspped="%"/>
 
     </div>
         <div style={{"display":"flex","gap":"50px","margin-top":"50px","justifyContent":"center"}}>
