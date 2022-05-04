@@ -1,4 +1,5 @@
 import React from 'react'
+import Highlights from './Highlights'
 import './Mainarea.css'
 import Weather from './Weather'
 import Weathers from './Weathers'
@@ -15,6 +16,15 @@ function Mainarea() {
         </div>
       </div>
      <Weathers />
+     <div className='Highlit-container'>
+       <div className='Highlight-header'>
+        Today's Highlight
+       </div>
+       <div className='Highights'>
+       <Highlights />
+       </div>
+       
+     </div>
       </div>
   )
 }

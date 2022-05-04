@@ -1,0 +1,16 @@
+.HighLight-wind{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #E7E7EB;
+    padding: 10px;
+    margin-top: 10px;
+    gap:10px
+}
+.icon{
+   
+    transform: rotate(-150deg);
+}

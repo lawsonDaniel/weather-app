@@ -1,6 +1,6 @@
 .Side-bar{
     width: 459px;
-    height: 940px;
+    height: calc(1023px + 40px);
     background-color: #1E213A;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;

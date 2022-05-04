@@ -1,0 +1,31 @@
+.HighLight-header{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #E7E7EB;
+
+}
+.HighLight-main{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    color: #E7E7EB;
+    text-align: center;
+}
+.HighLight-main-sub{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 75px;
+    color: #E7E7EB;
+    text-align: center;
+}
