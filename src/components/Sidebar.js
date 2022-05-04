@@ -1,13 +1,12 @@
 import React from 'react'
 import './Sidebar.css'
+import SidebarMain from './SidebarMain'
+
 
 function Sidebar() {
   return (
     <div className='Side-bar'>
-        <div className='Search'>
-         <button className='Search-btn'>Search for Places</button>
-           
-        </div>
+       <SidebarMain />
     </div>
   )
 }

@@ -1,12 +1,17 @@
 .Side-bar{
     width: 459px;
-    height: 1023px;
+    height: 100%;
     background-color: #1E213A;
-    padding: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+   
+  
 }
 .Search{
     display: flex;
     justify-content: space-between;
+    padding: 24px 24px;
+
 }
 .Search-btn{
     font-family: 'Raleway';
@@ -21,7 +26,96 @@
     height: 40px;
     background: #6E707A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0;
+    outline: none;
 
+}
+.Gps{
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 100%;
+    padding: 11px;
+}
+.Weather-container{
+    width: 100%;
+    height: 318px;
+    margin-top:8px;
+}
+.weather-icon{
+    background-image: url('../images/Cloud-background.png');
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Weather-container-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 318px;
+    opacity: 1.0;
+
+}
+.Weather-temperature-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.Weather-temperature{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 144px;
+    line-height: 169px;
+    /* identical to box height */
+    color: #E7E7EB;
+
+}
+.Weather-temperature-unit{
+    font-size: 50px;
+    color: #A09FB1;
+}
+.Weather-status{
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #A09FB1;
+}
+.Weather-status-container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.Weather-date{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    gap: 22px;
+}
+.Day{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #88869D;
+}
+.Weather-location-container{
+    display: flex;
+    justify-content: center;
+    color: #88869D;
+    font-family: 'Raleway';
+    margin-top: 60px;
+    gap: 2px;
 
 
 }
