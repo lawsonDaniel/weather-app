@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from '../images/Shower.png'
 
-function SidebarMain() {
+function SidebarMain({search}) {
   return (
    <>
     <div className='Search'>
         <div> 
-            <button className='Search-btn'>Search for Places</button>
+            <button onClick={search} className='Search-btn'>Search for Places</button>
         </div>
         <div className="Gps">
             <span className="material-icons" style={{"color":"#fff"}}>

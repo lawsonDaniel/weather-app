@@ -1,0 +1,40 @@
+.search-bar{
+    background-color:   #1E213A;
+    width: 70%;
+}
+.search-bar{
+    border: 0;
+    outline: none;
+    background-color: #1E213A;
+    color: #fff;
+    
+}
+form{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.search-area{
+    padding: 9px;
+    border: 1px solid #E7E7EB;
+
+}
+.Search-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.cancle-search{
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    margin-top: 10px;
+}
+.btn{
+    width: 86px;
+    height: 38px;
+    background: #3C47E9;
+    border: 0;
+    outline: none;
+    color: #fff;
+}
