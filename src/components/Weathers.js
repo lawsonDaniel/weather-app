@@ -2,16 +2,14 @@ import React from 'react'
 import './Mainarea.css'
 import Weather from './Weather'
 
-function Weathers() {
+function Weathers({weather}) {
   return (
     <div className="Weather-list">
-        <Weather />
-        <Weather />
-        <Weather />
-        <Weather />
-        <Weather />
-        <Weather />
-       
+        <Weather weather={weather}/>
+        <Weather weather={weather}/>
+        <Weather weather={weather}/>
+        <Weather weather={weather}/>
+        <Weather weather={weather}/>
       </div>
   )
 }

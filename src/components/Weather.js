@@ -2,11 +2,14 @@ import React from 'react'
 import './Weather.css'
 import img from '../images/Clear.png'
 
-function Weather() {
+function Weather({weather}) {
+ 
+  console.log(weather.applicable_date)
+
   return (
     <>
     <div className="Weather">
-    <div className='Weather-day'>Weather</div>
+    <div className='Weather-day'>{weather}</div>
     <div className='weather-icon-container'>
       <img className='Weather-icon' src={img} alt="" />
     </div>

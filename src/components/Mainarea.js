@@ -4,7 +4,7 @@ import './Mainarea.css'
 import Weather from './Weather'
 import Weathers from './Weathers'
 
-function Mainarea() {
+function Mainarea({weather}) {
   return (
     <div className='Main-area'>
       <div className="temperature-unit">
@@ -15,13 +15,13 @@ function Mainarea() {
         ℉
         </div>
       </div>
-     <Weathers />
+     <Weathers weather={weather}/>
      <div className='Highlit-container'>
        <div className='Highlight-header'>
         Today's Highlight
        </div>
        <div className='Highights'>
-       <Highlights />
+       <Highlights weather={weather} />
        </div>
        
      </div>
