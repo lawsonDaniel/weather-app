@@ -4,7 +4,7 @@ import SidebarMain from './SidebarMain'
 import SidebarSearch from './SidebarSearch'
 import { useState } from 'react'
 
-function Sidebar() {
+function Sidebar({weather}) {
 
   const [search, setsearch] = useState(false);
   const toggleSearch = ()=>{
@@ -12,7 +12,7 @@ function Sidebar() {
   }
   return (
     <div className='Side-bar'>
-      {search ?  <SidebarSearch close={toggleSearch} /> : <SidebarMain search={toggleSearch} />}
+      {search ?  <SidebarSearch close={toggleSearch} /> : <SidebarMain weather={weather} search={toggleSearch} />}
     </div>
   )
 }

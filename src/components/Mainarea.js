@@ -21,7 +21,7 @@ function Mainarea({weather}) {
         Today's Highlight
        </div>
        <div className='Highights'>
-       <Highlights weather={weather} />
+       {/* <Highlights weather={weather} /> */}
        </div>
        
      </div>

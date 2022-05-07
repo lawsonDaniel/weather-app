@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
   
+  const [weather, setweather] = useState([]);
   //get users current location
   const GetLocation = ()=> {
     if (navigator.geolocation) {
@@ -15,6 +16,8 @@ function App() {
       alert('Device not supported')
     }
   }
+  
+
   
   const ShowPosition = (position)  => {
     const lat = position.coords.latitude; 
@@ -33,7 +36,7 @@ function App() {
         axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`)
         .then((res) => {
            const getWeather = res.data.consolidated_weather
-            console.log(getWeather)
+            setweather(getWeather)
             
         })
         .catch(err => console.log(err))
@@ -51,12 +54,26 @@ function App() {
 
   return (
     <div className="App">
-      {/* <button onClick={GetLocation}>Show location</button> */}
-    <Sidebar />
-    <Mainarea weather={GetLocation}/>
+    {/* <Sidebar weather={weather} /> */}
+    <Mainarea weather={weather} />
     <div onClick={GetLocation}>click</div>
- 
-  
+    {console.log(weather)}
+
+    {/* air_pressure: 1008
+    applicable_date: "2022-05-07"
+    created: "2022-05-07T17:50:26.137080Z"
+    humidity: 35
+    id: 6651961236520960
+    max_temp: 39.75
+    min_temp: 27.25
+    predictability: 70
+    the_temp: 39.175
+    visibility: 10.629486300007954
+    weather_state_abbr: "lc"
+    weather_state_name: "Light Cloud"
+    wind_direction: 267.0176065695496
+    wind_direction_compass: "W"
+    wind_speed: 7.713472424462471 */}
     </div>
   );
 }

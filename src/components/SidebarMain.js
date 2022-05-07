@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from '../images/Shower.png'
 
-function SidebarMain({search}) {
+function SidebarMain({search,weather}) {
   return (
    <>
     <div className='Search'>
@@ -27,7 +27,10 @@ function SidebarMain({search}) {
         </div>
         {/* would add the temperature api here */}
         <div className='Weather-temperature-container'>
-            <span className='Weather-temperature'> 15<span className='Weather-temperature-unit'>℃</span> </span>
+            <span className='Weather-temperature'> {
+                //adding the weather
+            
+            }<span className='Weather-temperature-unit'>℃</span> </span>
         </div>
             {/* would add the weather status here */}
         <div className='Weather-status-container'>
