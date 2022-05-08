@@ -1,10 +1,16 @@
 import React from 'react'
+import "./hummidity.css"
 
-function Humidity() {
+function Humidity({hummidity}) {
   return (
     <>
-      <div className="progress" style={{display:'flex',justifyContent:'center'}}>
-        <div className="progress-bar" role="progressbar" style={{width: '66%','height':'8px',background:'#FFEC65','border-radius': '80px'}} aria-valuenow={85} aria-valuemin={0} aria-valuemax={100}></div>
+      <div className="progress" style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+       <div className='hummidity-scale'>
+         <div>0%</div>
+         <div>50%</div>
+         <div>100%</div>
+       </div>
+       <progress value={hummidity} max="100">{hummidity}</progress>
       </div>
       
     </>

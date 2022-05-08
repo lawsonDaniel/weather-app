@@ -8,6 +8,7 @@ import { useState } from 'react';
 function App() {
   
   const [weather, setweather] = useState([]);
+  const [weatherl, setweatherl] = useState('');
   //get users current location
   const GetLocation = ()=> {
     if (navigator.geolocation) {
@@ -30,11 +31,12 @@ function App() {
         
         //storing info 
         const weatherInfo = response.data
-        const woeid = weatherInfo[0].woeid 
+        const woeid = weatherInfo[5].woeid 
         
       
         axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`)
         .then((res) => {
+          setweatherl(res.data.title)
            const getWeather = res.data.consolidated_weather
             setweather(getWeather)
             
@@ -54,13 +56,13 @@ function App() {
 
   return (
     <div className="App">
-    {/* <Sidebar weather={weather} /> */}
+    <Sidebar weather={weather} weatherl={weatherl} />
     <Mainarea weather={weather} />
     <div onClick={GetLocation}>click</div>
     {console.log(weather)}
 
     {/* air_pressure: 1008
-    applicable_date: "2022-05-07"
+    applicable_date: "2022-05-07  "
     created: "2022-05-07T17:50:26.137080Z"
     humidity: 35
     id: 6651961236520960

@@ -1,0 +1,24 @@
+progress {
+    border: none;
+    width: 66%;
+    height: 8px;
+    border-radius: 80px;
+  }
+  
+  progress {
+    color: #FFEC65;
+  }
+  
+  progress::-webkit-progress-value {
+    background: #FFEC65;
+  }
+  
+  progress::-moz-progress-bar {
+    background: #FFEC65;
+  }
+  .hummidity-scale{
+      width: 66%;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+  }

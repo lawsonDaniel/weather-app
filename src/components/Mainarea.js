@@ -8,10 +8,10 @@ function Mainarea({weather}) {
   return (
     <div className='Main-area'>
       <div className="temperature-unit">
-        <div className='temperature-unit-value'>
+        <div className='temperature-unit-value active'>
         ℃
         </div>
-        <div className='temperature-unit-value active'>
+        <div className='temperature-unit-value'>
         ℉
         </div>
       </div>
@@ -21,7 +21,7 @@ function Mainarea({weather}) {
         Today's Highlight
        </div>
        <div className='Highights'>
-       {/* <Highlights weather={weather} /> */}
+       <Highlights weather={weather} />
        </div>
        
      </div>

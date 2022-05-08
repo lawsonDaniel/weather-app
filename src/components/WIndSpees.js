@@ -1,17 +1,17 @@
 import React from 'react'
 import './windspeed.css'
 
-function WIndSpees() {
+function WIndSpees({direction,dir}) {
   return (
     <>
       <div className='HighLight-wind'>
             <div>
-                <span className="material-icons icon">
+                <span className="material-icons" style={{ transform: `rotate(${dir}deg)`}}>
                 assistant_navigation
                 </span>
             </div>
             <div>
-                WSW
+               {direction}
             </div>
         </div>
     </>
