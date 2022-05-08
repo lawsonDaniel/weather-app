@@ -31,7 +31,8 @@ function App() {
         
         //storing info 
         const weatherInfo = response.data
-        const woeid = weatherInfo[5].woeid 
+        const woeid = weatherInfo[3].woeid 
+        console.log(weatherInfo.length)
         
       
         axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`)
@@ -47,7 +48,7 @@ function App() {
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        alert('Network Error')
       })
 
           
