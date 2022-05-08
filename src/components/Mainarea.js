@@ -4,18 +4,19 @@ import './Mainarea.css'
 import Weather from './Weather'
 import Weathers from './Weathers'
 
-function Mainarea({weather}) {
+function Mainarea({weather,fe,ce,unit}) {
+ 
   return (
     <div className='Main-area'>
       <div className="temperature-unit">
-        <div className='temperature-unit-value active'>
+        <div className={`temperature-unit-value ${unit == true ? `active` : null }`} onClick={ce}>
         ℃
         </div>
-        <div className='temperature-unit-value'>
+        <div className={`temperature-unit-value ${unit == !true ? `active` : null }`} onClick={fe}>
         ℉
         </div>
       </div>
-     <Weathers weather={weather}/>
+     <Weathers weather={weather} unit={unit}/>
      <div className='Highlit-container'>
        <div className='Highlight-header'>
         Today's Highlight

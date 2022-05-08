@@ -2,7 +2,7 @@ import React from 'react'
 import './Weather.css'
 
 
-function Weather({day,max,min,img}) {
+function Weather({day,max,min,img,unit}) {
  
   
 
@@ -15,10 +15,10 @@ function Weather({day,max,min,img}) {
     </div>
     <div className='Weather-value-container'>
       <div className='Weather-value'>
-      {`${max}°C`}
+       {unit == true ? `${max}°C` : `${max}°F` }
       </div>
       <div className='Weather-value'>
-      {`${min}°C`}
+      {unit == true ? `${min}°C` : `${min}°F` }
       </div>
     </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './Mainarea.css'
 import Weather from './Weather'
 
-function Weathers({weather}) {
+function Weathers({weather,unit}) {
   return (
     <div className="Weather-list">
         
@@ -13,7 +13,7 @@ function Weathers({weather}) {
         var dayName = days[d.getDay()];
 
         return(
-          <Weather key={w.id} max={Math.floor(w.max_temp)} min={Math.floor(w.min_temp)} day={dayName} img={`https://www.metaweather.com//static/img/weather/${w. weather_state_abbr}.svg`} />
+          <Weather unit={unit} key={w.id} max={unit == true ? Math.floor(w.max_temp) : ((Math.floor(w.max_temp)) * 9/5) + 32 } min={unit == true ? Math.floor(w.max_temp) : ((Math.floor(w.max_temp)) * 9/5) + 32 } day={dayName} img={`https://www.metaweather.com//static/img/weather/${w. weather_state_abbr}.svg`} />
         )
       })
     }

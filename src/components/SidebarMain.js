@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from '../images/Shower.png'
 
-function SidebarMain({search,weather,weatherl}) {
+function SidebarMain({search,weather,weatherl,unit}) {
 
 var today = new Date()
 var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
@@ -43,7 +43,7 @@ var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
                 weather.map((w)=>{
                 return (
                 <>
-                { w.applicable_date == date ?  <span className='Weather-temperature'> {Math.floor(w.the_temp)}<span className='Weather-temperature-unit'>℃</span>   </span>   : null} 
+                { w.applicable_date == date ?  <span className='Weather-temperature'>{unit == true ? Math.floor(w.the_temp) : ((Math.floor(w.the_temp)) * 9/5) + 32 }<span className='Weather-temperature-unit'>  {unit == true ? `°C` : `°F` }</span>   </span>   : null} 
                 </>
                 )
                 })

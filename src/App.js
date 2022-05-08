@@ -3,12 +3,15 @@ import './App.css';
 import Mainarea from './components/Mainarea';
 import Sidebar from './components/Sidebar';
 import axios, { Axios } from 'axios';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 function App() {
   
   const [weather, setweather] = useState([]);
   const [weatherl, setweatherl] = useState('');
+  const [unit,setunit] = useState(false)
+
+
   //get users current location
   const GetLocation = ()=> {
     if (navigator.geolocation) {
@@ -18,7 +21,16 @@ function App() {
     }
   }
   
-
+// //convert the unit
+// const Convert =()=>{
+//   weather.map((w)=>{
+//     return(
+      
+//     (Math.floor(w.the_temp)*(9/5)) +32  
+      
+//       )
+//   })
+// }
   
   const ShowPosition = (position)  => {
     const lat = position.coords.latitude; 
@@ -31,9 +43,9 @@ function App() {
         
         //storing info 
         const weatherInfo = response.data
-        const woeid = weatherInfo[3].woeid 
-        console.log(weatherInfo.length)
-        
+        const woeid = weatherInfo[0].woeid 
+        // 
+       
       
         axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`)
         .then((res) => {
@@ -55,12 +67,32 @@ function App() {
 
   }
 
+
+  const ce = ()=>{
+    if(!unit == true ){
+      setunit(true)
+    }
+   
+  }
+
+  const fe = ()=>{
+    if(unit == true ){
+      setunit(!true)
+    }
+   
+  }
+
   return (
     <div className="App">
-    <Sidebar weather={weather} weatherl={weatherl} />
-    <Mainarea weather={weather} />
-    <div onClick={GetLocation}>click</div>
-    {console.log(weather)}
+    <Sidebar weather={weather} weatherl={weatherl} unit={unit} />
+    <Mainarea weather={weather} ce={ce} fe={fe} unit={unit} />
+    {/* <div onClick={GetLocation}>click</div> */}
+    {
+      useEffect(()=>{
+        GetLocation()
+      },[])
+    }
+    {console.log(unit)}
 
     {/* air_pressure: 1008
     applicable_date: "2022-05-07  "

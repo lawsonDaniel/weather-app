@@ -1,12 +1,14 @@
 import React from 'react'
 import './Sidebarsearch.css'
+import cancel from '../images/cancle.png'
+import search from '../images/search.png'
 
 function SidebarSearch({close}) {
   return (
       <>
       <div className='cancle-search'>
       <span className="material-icons-sharp" onClick={close}>
-        close
+        <img style={{color:'white'}} src={cancel} alt="" />
         </span>
 
       </div>
@@ -15,7 +17,7 @@ function SidebarSearch({close}) {
         <form >
         <div className='search-area'>
         <span className="material-icons-sharp">
-            search
+        <img style={{color:'white'}} src={search} alt="" />
             </span>
             <input className='search-bar' type="search" placeholder='search location' />
         </div>
