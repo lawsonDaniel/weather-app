@@ -12,12 +12,12 @@ var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
         <div> 
             <button onClick={search} className='Search-btn'>Search for Places</button>
         </div>
-        <div className="Gps">
+        {/* <div className="Gps">
             <span className="material-icons" style={{"color":"#fff"}}>
               gps_fixed
             </span>
 
-          </div>
+          </div> */}
       </div>
       {/* weather images */}
         <div className='Weather-container'>
