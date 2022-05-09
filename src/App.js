@@ -2,14 +2,20 @@
 import './App.css';
 import Mainarea from './components/Mainarea';
 import Sidebar from './components/Sidebar';
-import axios, { Axios } from 'axios';
+import axios from 'axios';
 import { useState,useEffect } from 'react';
+
 
 function App() {
   
   const [weather, setweather] = useState([]);
   const [weatherl, setweatherl] = useState('');
   const [unit,setunit] = useState(false)
+  const [location,setlocation] = useState([])
+  const [search, setsearch] = useState(false);
+
+
+
 
 
   //get users current location
@@ -20,18 +26,41 @@ function App() {
       alert('Device not supported')
     }
   }
-  
-// //convert the unit
-// const Convert =()=>{
-//   weather.map((w)=>{
-//     return(
-      
-//     (Math.floor(w.the_temp)*(9/5)) +32  
-      
-//       )
-//   })
-// }
-  
+    
+  const  SearchForLocation =(location)=>{
+   
+    if(location){
+
+      axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${location}`).then((res)=>{
+        
+      if(res.data.length === 0){
+          alert('No Data on location')
+        }else{
+          const datalocation = res.data
+          setlocation(datalocation)
+        }
+       
+      })
+    }else{
+      alert('please enter a location')
+    }
+   
+  }
+
+  const onClickedSearchLocation = (clickedloc)=>{
+    axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${clickedloc}`)
+    .then((res) => {
+      setweatherl(res.data.title)
+       const getWeather = res.data.consolidated_weather
+        setweather(getWeather)
+        
+    })
+    .catch(err => console.log(err))
+    
+  }
+   
+
+
   const ShowPosition = (position)  => {
     const lat = position.coords.latitude; 
     const long = position.coords.longitude ;  
@@ -43,10 +72,9 @@ function App() {
         
         //storing info 
         const weatherInfo = response.data
-        const woeid = weatherInfo[0].woeid 
-        // 
-       
-      
+        const woeid = weatherInfo[1].woeid 
+        
+    
         axios.get(`https://lawblazecorsproxy.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`)
         .then((res) => {
           setweatherl(res.data.title)
@@ -55,8 +83,6 @@ function App() {
             
         })
         .catch(err => console.log(err))
-
-  
       })
       .catch(function (error) {
         // handle error
@@ -82,17 +108,20 @@ function App() {
    
   }
 
+
+
   return (
     <div className="App">
-    <Sidebar weather={weather} weatherl={weatherl} unit={unit} />
+     
+    <Sidebar search={search} setsearch={setsearch}  location={location} onClickedSearchLocation={onClickedSearchLocation}  SearchForLocation={ SearchForLocation} weather={weather} weatherl={weatherl} unit={unit} />
     <Mainarea weather={weather} ce={ce} fe={fe} unit={unit} />
-    {/* <div onClick={GetLocation}>click</div> */}
     {
       useEffect(()=>{
         GetLocation()
       },[])
     }
-    {console.log(unit)}
+   
+
 
     {/* air_pressure: 1008
     applicable_date: "2022-05-07  "

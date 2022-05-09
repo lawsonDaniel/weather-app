@@ -7,12 +7,14 @@
     outline: none;
     background-color: #1E213A;
     color: #fff;
+    width: 100%;
     
 }
 form{
     display: flex;
     gap: 5px;
     align-items: center;
+    justify-content: center;
 }
 .search-area{
     padding: 9px;
