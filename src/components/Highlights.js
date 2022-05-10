@@ -7,7 +7,18 @@ import { useState } from 'react';
 function Highlights({weather}) {
 
 var today = new Date()
-var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
+let day;
+day = today.getDate()
+if(day<10){
+  day = `0${day}`
+}
+
+let month;
+month = today.getMonth()
+if(month<10){
+  month = `0${month+1}`
+}
+var date =  `${today.getFullYear()}-${month}-${day}`
 
 
   return (
@@ -15,6 +26,7 @@ var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
          <div style={{"display":"flex","gap":"50px","justifyContent":"center"}}>
       {
         weather.map((w)=>{
+          console.log(w.applicable_date + " " + date) 
         return (
          <>
          { w.applicable_date == date ? <Highlight status='Wind Status' statusnumber={Math.floor(w.wind_speed)} statusspped='mps' wind={<WIndSpees direction={w.wind_direction_compass} dir={w.wind_direction}/>} />  : null}

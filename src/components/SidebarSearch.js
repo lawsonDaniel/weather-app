@@ -46,7 +46,7 @@ function SidebarSearch({close,search, SearchForLocation,location,onClickedSearch
                 padding: '23px 49px'
                 
                 }}>
-                    <select onChange={(e)=>{
+                    <select  onChange={(e)=>{
                     return  setclickedLocation(e.target.value)
                     }}  style={{
                      border: '1px solid #FFF',

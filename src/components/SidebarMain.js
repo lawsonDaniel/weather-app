@@ -5,7 +5,19 @@ function SidebarMain({search,weather,weatherl,unit}) {
 
 var today = new Date()
 var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-0'+today.getDate();
+var today = new Date()
+let day;
+day = today.getDate()
+if(day<10){
+  day = `0${day}`
+}
 
+let month;
+month = today.getMonth()
+if(month<10){
+  month = `0${month+1}`
+}
+var date =  `${today.getFullYear()}-${month}-${day}`
   return (
    <>
     <div className='Search'>
