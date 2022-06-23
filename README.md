@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # <a href="https://lawblaze-weather-app.netlify.app/"> Demo </a>
 # Note : this app has not been optimised for mobile screens
-
+# Note : the api provide <a href="https://www.metaweather.com/api/">metaweather.com</a> has been down so you might get network error alert
 ## Available Scripts
 
 In the project directory, you can run:
